@@ -1,0 +1,2 @@
+<?php
+ class Plugin extends CI_Controller{ public function __construct(){ parent::__construct(); $this->load->model('query','',TRUE); } public function sitemap($type = NULL){ header('Content-Type:text/plain; charset=utf-8'); $domain = is_https() ? 'https://' : 'http://'; $domain .= $_SERVER['HTTP_HOST']; $imgids = $this->query->get_imgid(); foreach ($imgids as $imgid) { $imgid = $imgid->imgid; echo $domain.'/img/'.$imgid."\n"; } } }

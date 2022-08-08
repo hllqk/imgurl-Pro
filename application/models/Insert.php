@@ -1,0 +1,2 @@
+<?php
+ class Insert extends CI_Model { public function __construct() { parent::__construct(); } public function images($datas){ if($this->db->insert('images', $datas)){ return $this->db->insert_id(); } else{ return false; exit; } } public function imginfo($datas){ if($this->db->insert('imginfo', $datas)){ return $this->db->insert_id(); } else{ return false; exit; } } } ?>

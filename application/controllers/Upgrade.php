@@ -1,0 +1,2 @@
+<?php
+ defined('BASEPATH') OR exit('No direct script access allowed'); class Upgrade extends CI_Controller{ public function __construct(){ parent::__construct(); $this->load->library('basic'); $this->basic->is_login(TRUE); $this->load->model('query','',TRUE); } public function v22_to_v23(){ $result = $this->query->to23(); if($result){ echo '升级完毕，请关闭此页面！'; } else{ echo '升级失败，未知错误！'; } } }
